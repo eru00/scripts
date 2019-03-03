@@ -1,6 +1,6 @@
 #!/bin/bash
 # Script to update my dynamic DNS from google domains
-CREDENTIALS_PATH=""
+CREDENTIALS_PATH=$@
 [ "$CREDENTIALS_PATH" == "" ] && echo "Undefined credentials path" && exit 1
 
 IP=$(curl https://ipinfo.io/ip)
@@ -21,4 +21,4 @@ curl https://$CREDENTIALS@domains.google.com/nic/update\?hostname\=$DOMAIN\&myip
 
 ################
 # Run at startup
-# echo "@reboot /path/to/script" | crontab -
+# echo "@reboot /path/to/script /path/to/creds/file" | crontab -
