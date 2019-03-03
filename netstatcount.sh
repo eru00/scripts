@@ -8,11 +8,11 @@ STATUSES=( )
 while getopts p:r:as: option
     do
         case "${option}"
-            in
-                p) PORT=":${OPTARG}";;
-                a) ALL=1;;
-				r) REFRESH=${OPTARG};;
-				s) STATUSES=("${STATUSES[@]}" "${OPTARG}");;
+        in
+			p) PORT=":${OPTARG}";;
+			a) ALL=1;;
+			r) REFRESH=${OPTARG};;
+			s) STATUSES=("${STATUSES[@]}" "${OPTARG}");;
         esac
 done
 
