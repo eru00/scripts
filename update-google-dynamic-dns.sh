@@ -1,6 +1,7 @@
 #!/bin/bash
 # Script to update my dynamic DNS from google domains
-CREDENTIALS_PATH="$HOME/googledomains.credentials"
+CREDENTIALS_PATH=""
+[ "$CREDENTIALS_PATH" == "" ] && echo "Undefined credentials path" && exit 1
 
 IP=$(curl https://ipinfo.io/ip)
 [ $? -ne 0 ] && echo "Error fetching IP" && exit 1
