@@ -12,7 +12,7 @@ while getopts p:r:as: option
                 p) PORT=":${OPTARG}";;
                 a) ALL=1;;
 				r) REFRESH=${OPTARG};;
-				s) STATUSES=("${STATUSES[@]}" "${OPTARG}")
+				s) STATUSES=("${STATUSES[@]}" "${OPTARG}");;
         esac
 done
 
