@@ -1,5 +1,6 @@
 #!/bin/bash
 # Script to monitor the tcp sockets
+
 while true; do 
 	NS=$(netstat -nat)
 	clear
