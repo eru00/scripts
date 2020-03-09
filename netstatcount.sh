@@ -23,10 +23,11 @@ while true; do
 	clear
 	for PORT in "${PORTS[@]}"
 	do
-		[[ "$PORT" ]] && NS=$(echo "$NS" | grep $PORT) 
+    Nsp=$NS
+		[[ "$PORT" ]] && NSp=$(echo "$NS" | grep $PORT) 
 		for STATUS in "${STATUSES[@]}"
 		do
-			echo "$STATUS $PORT" ; echo "$NS" | grep $STATUS | wc -l
+			echo "$STATUS $PORT" ; echo "$NSp" | grep $STATUS | wc -l
 		done
 	done
 	echo "----"
