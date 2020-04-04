@@ -44,6 +44,6 @@ while IFS= read -r file; do
   in="$file"
   out="$(appendSuffix "$in" "$outFileSuffix")"
   printf "Processing %s...\n" "${in}"
-  ffmpeg -i "$in" -vcodec libx265 -map 0 -crf 24 "$out"
+  ffmpeg -nostdin -i "$in" -vcodec libx265 -map 0 -crf 24 "$out"
   printf "Wrote output to %s\n" "${out}"
 done <<< "$inputFiles"
