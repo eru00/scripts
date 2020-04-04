@@ -5,15 +5,14 @@ ALL=0
 REFRESH=1
 STATUSES=( )
 PORTS=( "" )
-while getopts p:r:as: option
-    do
-        case "${option}"
-        in
-			p) PORTS=("${PORTS[@]}" ":${OPTARG}");;
-			a) ALL=1;;
-			r) REFRESH=${OPTARG};;
-			s) STATUSES=("${STATUSES[@]}" "${OPTARG}");;
-        esac
+while getopts p:r:as: option; do
+	case "${option}"
+	in
+		p) PORTS=("${PORTS[@]}" ":${OPTARG}");;
+		a) ALL=1;;
+		r) REFRESH=${OPTARG};;
+		s) STATUSES=("${STATUSES[@]}" "${OPTARG}");;
+	esac
 done
 
 [ ${#STATUSES[@]} -eq 0 ] && STATUSES=( TIME_WAIT ESTABLISHED )
